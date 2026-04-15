@@ -1,3 +1,20 @@
+:root {
+  --blue-royal: #0a4fd4;
+  --blue-bright: #1a7fe8;
+  --blue-sky: #38bdf8;
+  --blue-pale: #e0f2fe;
+  --blue-deep: #0c2a6e;
+  --black: #0a0a0a;
+  --black-soft: #111827;
+  --white: #ffffff;
+  --text-dark: #0f2a4a;
+  --text-mid: #334e6f;
+  --text-light: #e0f2fe;
+  --font-display: "League Spartan", sans-serif;
+  --font-serif: "Cormorant Garamond", serif;
+  --font-body: "Inter Tight", sans-serif;
+  --transition: all 0.3s ease;
+}
 html {
   scroll-behavior: smooth;
 }
@@ -6,12 +23,38 @@ html {
   padding: 0;
   box-sizing: border-box;
 }
-
+section {
+  background: linear-gradient(180deg, #000000 0%, #051622 100%);
+  color: white;
+}
 body {
-  background-color: #1a1a1a;
+  overflow-x: hidden;
+  font-family: var(--font-body);
+  color: var(--text-dark);
+  background: var(--white);
+}
+:-webkit-scrollbar {
+  width: 5px;
+}
+::-webkit-scrollbar-track {
+  background: var(--blue-pale);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--blue-royal);
+  border-radius: 3px;
 }
 .main-header {
-  transition: transform 0.3s ease-in-out;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  transform: translateY(0);
+  transition:
+    transform 0.3s ease-in-out,
+    background 0.3 ease;
+}
+.main-header.header-hidden {
+  transform: translateY(-100%);
 }
 header {
   position: fixed;
@@ -20,7 +63,7 @@ header {
   z-index: 1000;
   transition: transform 0.4s ease-in-out;
   background: linear-gradient(90deg, #38bdf8, #0369a1);
-  padding: 20 50px;
+  padding: 20px 50px;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
 }
 .header-hidden {
@@ -32,19 +75,6 @@ header {
   align-items: center;
   max-width: 1400px;
   margin: 0 auto;
-}
-.nav-logo {
-  font-family: "league-spartan", sans-serif;
-  text-decoration: none;
-  color: #ffffff;
-  font-size: 1.8rem;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  transition: 0.3s;
-}
-.nav-logo span {
-  color: #00e5ff;
-  text-shadow: 0 0 10px rgba(0, 229, 255, 0.6);
 }
 .nav-kanan {
   display: flex;
@@ -63,16 +93,18 @@ header {
   transition: 0.3s;
   display: inline-block;
   padding: 5px 12px;
-  transition: all 0.2 ease;
+  transition: all 0.2s ease;
   border: 1px solid transparent;
+  position: relative;
 }
 .nav-logo {
-  font-family: "league-spartan", sans-serif;
+  font-family: "League Spartan", sans-serif;
   font-size: 2rem;
   text-decoration: none;
   color: white;
   font-weight: 700;
   letter-spacing: 2px;
+  text-transform: uppercase;
 }
 .nav-logo span {
   color: #00e5ff;
@@ -83,6 +115,7 @@ header {
   transform: skewX(-10deg);
   box-shadow: 0 0 10px rgba(0, 229, 255, 0.3);
   text-shadow: none !important;
+  text-transform: uppercase;
 }
 .nav-kanan a:hover {
   color: #ffffff;
@@ -107,4 +140,453 @@ header {
   background-color: #000;
   transform: skewX(-10deg);
   box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+}
+.hero {
+  min-height: 100vh;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(
+    135deg,
+    var(--blue-royal) 0%,
+    var(--blue-bright) 40%,
+    var(--blue-sky) 100%
+  );
+}
+.hero-bg-bubbles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  animation: floatUp linear infinite;
+}
+.bubble:nth-child(1) {
+  width: 60px;
+  height: 60px;
+  left: 10%;
+  bottom: -60px;
+  animation-duration: 9s;
+  animation-delay: 0s;
+  background: rgba(255, 255, 255, 0.04);
+}
+.bubble:nth-child(2) {
+  width: 90px;
+  height: 90px;
+  left: 30%;
+  bottom: -90px;
+  animation-duration: 13s;
+  animation-delay: 2s;
+  background: rgba(255, 255, 255, 0.03);
+}
+.bubble:nth-child(3) {
+  width: 40px;
+  height: 40px;
+  left: 55%;
+  bottom: -40px;
+  animation-duration: 8s;
+  animation-delay: 1s;
+  background: rgba(255, 255, 255, 0.05);
+}
+.bubble:nth-child(4) {
+  width: 120px;
+  height: 120px;
+  left: 70%;
+  bottom: -120px;
+  animation-duration: 16s;
+  animation-delay: 3s;
+  background: rgba(255, 255, 255, 0.02);
+}
+.bubble:nth-child(5) {
+  width: 50px;
+  height: 50px;
+  left: 85%;
+  bottom: -50px;
+  animation-duration: 11s;
+  animation-delay: 0.5s;
+  background: rgba(255, 255, 255, 0.04);
+}
+@keyframes floatUp {
+  0% {
+    transform: translateY(0) scale(1);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 0.6;
+  }
+  100% {
+    transform: translateY(-110vh) scale(0.8);
+    opacity: 0;
+  }
+}
+.hero-content {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  align-items: center;
+  gap: 3rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 8rem 3rem 5rem;
+  width: 100%;
+}
+.hero-left {
+  flex: 1;
+  max-width: 580px;
+}
+.hero-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 5px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.2s;
+}
+.hero-name {
+  font-family: var(--font-display);
+  font-size: clamp(42px, 6vw, 76px);
+  font-weight: 900;
+  color: var(--white);
+  line-height: 1;
+  margin-bottom: 0.4rem;
+  opacity: 0;
+  animation: fadeUp 0.7s ease forwards 0.5s;
+}
+.hero-name-accent {
+  display: block;
+  color: var(--black);
+  background: var(--white);
+  display: inline-block;
+  padding: 0 14px 4px;
+  transform: skewX(-6deg);
+  margin-top: 4px;
+}
+.hero-sub {
+  font-size: 0.9rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.7);
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  margin: 1rem 0 1.2rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 0.8s;
+}
+
+.hero-desc {
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.85);
+  line-height: 1.9;
+  max-width: 440px;
+  margin-bottom: 2rem;
+  border-left: 3px solid rgba(255, 255, 255, 0.5);
+  padding-left: 1rem;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 1.1s;
+}
+
+.hero-cta {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 1.4s;
+}
+
+.btn-main {
+  display: inline-block;
+  padding: 14px 36px;
+  background: var(--black);
+  color: var(--white);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 2px;
+}
+.btn-main:hover {
+  background: var(--black-soft);
+  transform: translateY(-2px);
+}
+
+.btn-ghost {
+  display: inline-block;
+  padding: 13px 32px;
+  background: transparent;
+  color: var(--white);
+  border: 2px solid rgba(255, 255, 255, 0.6);
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: var(--transition);
+  border-radius: 2px;
+}
+.btn-ghost:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: var(--white);
+  transform: translateY(-2px);
+}
+.hero-right {
+  width: 230px;
+  flex-shrink: 0;
+  opacity: 0;
+  animation: fadeScale 0.8s ease forwards 1s;
+}
+.persona-card {
+  position: relative;
+  width: 100%;
+  padding: 2.2rem 1.6rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  overflow: hidden;
+  background: rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  clip-path: polygon(
+    0 0,
+    calc(100% - 18px) 0,
+    100% 18px,
+    100% 100%,
+    18px 100%,
+    0 calc(100% - 18px)
+  );
+}
+.pc-ring {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.pc-ring-1 {
+  position: absolute;
+  border-radius: 50%;
+  pointer-events: none;
+}
+.pc-ring-2 {
+  width: 110px;
+  height: 110px;
+  bottom: -30px;
+  left: -30px;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  animation: spinCCW 8s linear infinite;
+}
+.avatar-wrap {
+  position: relative;
+  z-index: 1;
+}
+.avatar-circle {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: var(--black);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--white);
+}
+.avatar-wrap {
+  position: relative;
+  z-index: 1;
+}
+.avatar-circle {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  background: var(--black);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 900;
+  color: var(--white);
+}
+.avatar-spin {
+  position: absolute;
+  inset: -7px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.3);
+  animation: spinCW 6s linear infinite;
+}
+.card-line {
+  width: 40px;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.3);
+  position: relative;
+}
+.card-name {
+  font-family: var(--font-display);
+  font-size: 11px;
+  font-weight: 900;
+  color: var(--white);
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+.card-role {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-align: center;
+  margin-top: -6px;
+  position: relative;
+  z-index: 1;
+}
+.card-tags {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+}
+.ctag {
+  font-size: 9px;
+  padding: 3px 9px;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  color: rgba(255, 255, 255, 0.8);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  border-radius: 2px;
+  background: rgba(255, 255, 255, 0.06);
+}
+.card-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  position: relative;
+  z-index: 1;
+}
+.status-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #00e5ff;
+  animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
+}
+.status-txt {
+  font-size: 10px;
+  color: #00e5ff;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.hero-scroll {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  z-index: 5;
+  opacity: 0;
+  animation: fadeUp 0.6s ease forwards 2s;
+}
+.scroll-line {
+  display: block;
+  width: 1px;
+  height: 48px;
+  background: rgba(255, 255, 255, 0.5);
+  animation: scrollPulse 1.5s ease-in-out infinite;
+}
+.scroll-label {
+  font-size: 10px;
+  color: rgba(255, 255, 255, 0.6);
+  letter-spacing: 4px;
+  font-weight: 700;
+}
+@keyframes scrollPulse {
+  0%,
+  100% {
+    opacity: 0.4;
+    transform: scaleY(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scaleY(1.15);
+  }
+}
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeScale {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spinCW {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes spinCCW {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
+  }
+}
+
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.5);
+    opacity: 0.7;
+  }
 }
