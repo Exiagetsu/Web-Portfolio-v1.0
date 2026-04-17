@@ -43,18 +43,32 @@ body {
   background: var(--blue-royal);
   border-radius: 3px;
 }
+.container {
+  max-width: 1300px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  width: 100%;
+}
 .main-header {
   position: fixed;
   top: 0;
   width: 100%;
   z-index: 1000;
-  transform: translateY(0);
-  transition:
-    transform 0.3s ease-in-out,
-    background 0.3 ease;
+  background: transparent;
+  backdrop-filter: none;
+  border-bottom: none;
+  box-shadow: none;
+  padding: 20px 0;
+  transition: all 0.4s ease;
 }
 .main-header.header-hidden {
   transform: translateY(-100%);
+}
+.main-header.nav-scrolled {
+  background: rgba(10, 30, 80, 0.6);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 14px 0;
 }
 header {
   position: fixed;
@@ -73,8 +87,6 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  max-width: 1400px;
-  margin: 0 auto;
 }
 .nav-kanan {
   display: flex;
@@ -85,6 +97,7 @@ header {
 .nav-kanan li a {
   text-decoration: none;
   color: white;
+  text-shadow: 0 1px 6px rgba(0, 0, 0, 0.4);
   font-family: "inter-tight", sans-serif;
   font-weight: 700;
   font-size: 1.1rem;
@@ -101,7 +114,8 @@ header {
   font-family: "League Spartan", sans-serif;
   font-size: 2rem;
   text-decoration: none;
-  color: white;
+  color: #ffffff !important;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
   font-weight: 700;
   letter-spacing: 2px;
   text-transform: uppercase;
@@ -118,8 +132,8 @@ header {
   text-transform: uppercase;
 }
 .nav-kanan a:hover {
-  color: #ffffff;
-  text-shadow: 0 0 8px rgba(0, 229, 255, 0.8);
+  color: #334e6f;
+  text-shadow: 0 0 5px rgba(10, 79, 212, 0.3);
 }
 .nav-kanan a::after {
   content: "";
@@ -137,9 +151,10 @@ header {
 }
 .nav-kanan li a:hover {
   color: #00e5ff;
-  background-color: #000;
-  transform: skewX(-10deg);
-  box-shadow: 0 0 12px rgba(0, 229, 255, 0.4);
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+  text-shadow: 0 0 12px rgba(0, 229, 255, 0.5);
 }
 .hero {
   min-height: 100vh;
@@ -147,15 +162,137 @@ header {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   overflow: hidden;
+  background: white;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   background: linear-gradient(
-    135deg,
-    var(--blue-royal) 0%,
-    var(--blue-bright) 40%,
-    var(--blue-sky) 100%
+    180deg,
+    #4fc3f7 0%,
+    #29b6f6 35%,
+    #1e88e5 65%,
+    #1565c0 85%,
+    #0a2a8a 100%
   );
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+  background: linear-gradient(
+    -45deg,
+    transparent 30%,
+    rgba(255, 255, 255, 0.08) 48%,
+    rgba(255, 255, 255, 0.18) 50%,
+    rgba(255, 255, 255, 0.08) 52%,
+    transparent 70%
+  );
+  pointer-events: none;
+}
+.underwater-bubbles {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  clip-path: polygon(25% 0%, 100% 0%, 100% 100%, 0% 100%);
+}
+
+.ub {
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.06);
+  animation: bubbleRise linear infinite;
+}
+
+.ub:nth-child(1) {
+  width: 18px;
+  height: 18px;
+  left: 55%;
+  bottom: -20px;
+  animation-duration: 7s;
+  animation-delay: 0s;
+}
+.ub:nth-child(2) {
+  width: 10px;
+  height: 10px;
+  left: 65%;
+  bottom: -20px;
+  animation-duration: 9s;
+  animation-delay: 1.5s;
+}
+.ub:nth-child(3) {
+  width: 24px;
+  height: 24px;
+  left: 72%;
+  bottom: -30px;
+  animation-duration: 11s;
+  animation-delay: 0.8s;
+}
+.ub:nth-child(4) {
+  width: 8px;
+  height: 8px;
+  left: 80%;
+  bottom: -10px;
+  animation-duration: 6s;
+  animation-delay: 2.2s;
+}
+.ub:nth-child(5) {
+  width: 16px;
+  height: 16px;
+  left: 88%;
+  bottom: -20px;
+  animation-duration: 8s;
+  animation-delay: 3s;
+}
+.ub:nth-child(6) {
+  width: 12px;
+  height: 12px;
+  left: 60%;
+  bottom: -15px;
+  animation-duration: 10s;
+  animation-delay: 4s;
+}
+.ub:nth-child(7) {
+  width: 6px;
+  height: 6px;
+  left: 93%;
+  bottom: -10px;
+  animation-duration: 7.5s;
+  animation-delay: 1s;
+}
+
+@keyframes bubbleRise {
+  0% {
+    transform: translateY(0) translateX(0);
+    opacity: 0;
+  }
+  10% {
+    opacity: 1;
+  }
+  50% {
+    transform: translateY(-50vh) translateX(12px);
+  }
+  90% {
+    opacity: 0.5;
+  }
+  100% {
+    transform: translateY(-105vh) translateX(-8px);
+    opacity: 0;
+  }
 }
 .hero-bg-bubbles {
+  z-index: 1;
   position: absolute;
   inset: 0;
   pointer-events: none;
@@ -164,7 +301,7 @@ header {
 .bubble {
   position: absolute;
   border-radius: 50%;
-  border: 1.5px solid rgba(255, 255, 255, 0.2);
+  border-color: rgba(0, 229, 255, 0.3);
   animation: floatUp linear infinite;
 }
 .bubble:nth-child(1) {
@@ -232,47 +369,49 @@ header {
   position: relative;
   z-index: 5;
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 3rem;
-  max-width: 1200px;
+  gap: 6rem;
   margin: 0 auto;
-  padding: 8rem 3rem 5rem;
+  padding: 100px 0;
   width: 100%;
 }
 .hero-left {
-  flex: 1;
-  max-width: 580px;
+  padding-left: 5rem;
+  padding-top: 2rem;
+  align-self: flex-start;
 }
 .hero-eyebrow {
   display: inline-block;
   font-family: var(--font-body);
-  font-size: 0.75rem;
+  font-size: 1rem;
   font-weight: 700;
   letter-spacing: 5px;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.8);
   margin-bottom: 1rem;
   opacity: 0;
   animation: fadeUp 0.6s ease forwards 0.2s;
+  padding-left: 4rem;
 }
 .hero-name {
   font-family: var(--font-display);
-  font-size: clamp(42px, 6vw, 76px);
+  font-size: clamp(45px, 9vw, 85px);
+  letter-spacing: -2px;
   font-weight: 900;
-  color: var(--white);
+  color: #ffffff;
   line-height: 1;
   margin-bottom: 0.4rem;
   opacity: 0;
   animation: fadeUp 0.7s ease forwards 0.5s;
 }
 .hero-name-accent {
-  display: block;
   color: var(--black);
   background: var(--white);
   display: inline-block;
-  padding: 0 14px 4px;
-  transform: skewX(-6deg);
-  margin-top: 4px;
+  padding: 2px 15px;
+  transform: skewX(-10deg);
+  margin-left: 5px;
 }
 .hero-sub {
   font-size: 0.9rem;
@@ -284,14 +423,13 @@ header {
   opacity: 0;
   animation: fadeUp 0.6s ease forwards 0.8s;
 }
-
 .hero-desc {
-  font-size: 15px;
+  font-size: 18px;
   color: rgba(255, 255, 255, 0.85);
+  border-left-color: rgba(255, 255, 255, 0.3);
   line-height: 1.9;
-  max-width: 440px;
+  max-width: 500px;
   margin-bottom: 2rem;
-  border-left: 3px solid rgba(255, 255, 255, 0.5);
   padding-left: 1rem;
   opacity: 0;
   animation: fadeUp 0.6s ease forwards 1.1s;
@@ -331,7 +469,7 @@ header {
   padding: 13px 32px;
   background: transparent;
   color: var(--white);
-  border: 2px solid rgba(255, 255, 255, 0.6);
+  border: 2px solid rgba(255, 255, 255, 0.8);
   font-family: var(--font-body);
   font-size: 0.8rem;
   font-weight: 700;
@@ -348,7 +486,7 @@ header {
   transform: translateY(-2px);
 }
 .hero-right {
-  width: 230px;
+  width: 320px;
   flex-shrink: 0;
   opacity: 0;
   animation: fadeScale 0.8s ease forwards 1s;
@@ -356,13 +494,14 @@ header {
 .persona-card {
   position: relative;
   width: 100%;
-  padding: 2.2rem 1.6rem;
+  padding: 3rem 2rem;
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1rem;
   overflow: hidden;
   background: rgba(0, 0, 0, 0.35);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   backdrop-filter: blur(20px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   clip-path: polygon(
@@ -385,19 +524,19 @@ header {
   pointer-events: none;
 }
 .pc-ring-2 {
-  width: 110px;
-  height: 110px;
-  bottom: -30px;
-  left: -30px;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  animation: spinCCW 8s linear infinite;
+  width: 130px;
+  height: 130px;
+  top: -20px;
+  right: -20px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  animation: spinCCW 10s linear infinite;
 }
 .avatar-wrap {
   position: relative;
   z-index: 1;
 }
 .avatar-circle {
-  width: 86px;
+  width: 110px;
   height: 86px;
   border-radius: 50%;
   background: var(--black);
@@ -443,7 +582,7 @@ header {
 }
 .card-name {
   font-family: var(--font-display);
-  font-size: 11px;
+  font-size: 14px;
   font-weight: 900;
   color: var(--white);
   letter-spacing: 3px;
@@ -453,7 +592,7 @@ header {
   z-index: 1;
 }
 .card-role {
-  font-size: 10px;
+  font-size: 12px;
   color: rgba(255, 255, 255, 0.6);
   letter-spacing: 2px;
   text-transform: uppercase;

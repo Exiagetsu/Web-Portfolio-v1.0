@@ -7,7 +7,7 @@
       content="Dzulfiqar Hanif Yudiantara Putra — Website Developer spesialis UI/Web. Lihat portofolio project dan skills saya."
     />
     <title>Dzulfiqar Portofolio</title>
-    <link rel="stylesheet" href="index.css" />
+    <link rel="stylesheet" href="index-alt.css" />
     <meta
       name="keywords"
       content="front-end developer, web developer, UI developer, HTML CSS JS, portofolio"
@@ -35,70 +35,88 @@
       href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
       rel="stylesheet"
     />
+    <body>
+      <header id="main-header" class="main-header">
+        <div class="container">
+          <nav class="navbar" id="navbar">
+            <a href="#hero" class="nav-logo">My <span>Persona</span></a>
+            <ul class="nav-kanan">
+              <li><a href="#about">About</a></li>
+              <li><a href="#project">Project</a></li>
+              <li><a href="#skills">Skills</a></li>
+              <li><a href="#contact">Contact Me</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+
+      <section id="hero" class="hero">
+        <div class="hero-bg-bubbles">
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+          <span class="bubble"></span>
+        </div>
+
+        <div class="underwater-bubbles">
+          <span class="ub"></span>
+          <span class="ub"></span>
+          <span class="ub"></span>
+          <span class="ub"></span>
+          <span class="ub"></span>
+          <span class="ub"></span>
+          <span class="ub"></span>
+        </div>
+
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-left">
+              <p class="hero-eyebrow">Website developer</p>
+              <h1 class="hero-name">
+                Dzulfiqar <span class="hero-name-accent"> Hanif </span>
+              </h1>
+              <p class="hero-desc">
+                Membangun antarmuka digital yang hidup dan bermakna. Setiap
+                baris kode adalah persona yang memanifestasikan ide menjadi
+                kenyataan.
+              </p>
+              <div class="hero-cta">
+                <a href="#project" class="btn-main">My Project</a>
+                <a href="#contact" class="btn-ghost">Contact Me</a>
+              </div>
+            </div>
+
+            <div class="hero-right">
+              <div class="persona-card">
+                <div class="pc-ring pc-ring-1"></div>
+                <div class="pc-ring pc-ring-2"></div>
+                <div class="avatar-wrap">
+                  <div class="avatar-circle">DH</div>
+                  <div class="avatar-spin"></div>
+                </div>
+                <div class="card-line"></div>
+                <p class="card-name">Dzulfiqar Hanif</p>
+                <p class="card-role">Website Developer</p>
+                <div class="card-tags">
+                  <span class="ctag">HTML</span>
+                  <span class="ctag">CSS</span>
+                  <span class="ctag">JS</span>
+                </div>
+                <div class="card-status">
+                  <span class="status-dot"></span>
+                  <span class="status-txt">Available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="hero-scroll">
+          <span class="scroll-line"></span>
+          <span class="scroll-label">SCROLL</span>
+        </div>
+      </section>
+      <script src="index.js"></script>
+    </body>
   </head>
-  <body>
-    <header id="main-header" class="main-header">
-      <nav class="navbar" id="navbar">
-        <a href="#hero" class="nav-logo">My <span>Persona</span></a>
-        <ul class="nav-kanan">
-          <li><a href="#about">About</a></li>
-          <li><a href="#project">Project</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact Me</a></li>
-        </ul>
-      </nav>
-    </header>
-    <section id="hero" class="hero">
-      <div class="hero-bg-bubbles">
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-        <span class="bubble"></span>
-      </div>
-      <div class="hero-content">
-        <div class="hero-left">
-          <p class="hero-eyebrow">Website developer</p>
-          <h1 class="hero-name">
-            Dzulfiqar <span class="hero-name-accent"> Hanif </span>
-          </h1>
-          <p class="hero-desc">
-            Membangun antarmuka digital yang hidup dan bermakna. Setiap baris
-            kode adalah persona yang memanifestasikan ide menjadi kenyataan.
-          </p>
-          <div class="hero-cta">
-            <a href="#project" class="btn-main">My Project</a>
-            <a href="#contact" class="btn-ghost">Contact Me</a>
-          </div>
-        </div>
-        <div class="hero-right">
-          <div class="persona-card">
-            <div class="pc-ring pc-ring-1"></div>
-            <div class="pc-ring pc-ring-1"></div>
-            <div class="avatar-wrap">
-              <div class="avatar-circle">DH</div>
-              <div class="avatar-spin"></div>
-            </div>
-            <div class="card-line"></div>
-            <p class="card-name">Dzulfiqar Hanif</p>
-            <p class="card-role">Website Developer</p>
-            <div class="card-tags">
-              <span class="ctag">HTML</span>
-              <span class="ctag">CSS</span>
-              <span class="ctag">JS</span>
-            </div>
-            <div class="card-status">
-              <span class="status-dot"></span>
-              <span class="status-txt">Avalaible</span>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="hero-scroll">
-        <span class="scroll-line"></span>
-        <span class="scroll-label">scroll-label</span>
-      </div>
-    </section>
-    <script src="index.js"></script>
-  </body>
 </html>
