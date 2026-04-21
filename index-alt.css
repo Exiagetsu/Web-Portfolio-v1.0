@@ -388,7 +388,7 @@ header {
   width: 100%;
 }
 .hero-left {
-  padding-left: 6rem;
+  padding-left: 10rem;
   padding-top: 2rem;
   align-self: flex-start;
 }
@@ -1023,4 +1023,139 @@ header {
   .hobbies-grid {
     grid-template-columns: 1fr;
   }
+}
+.social-link {
+  padding: 60px 10%;
+  background-color: var(--blue-pale);
+  border-top: 3px solid #051b3d;
+  border-bottom: 3px solid #051b3d;
+}
+
+.social-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
+  gap: 30px;
+}
+
+/* Wrapper buat nampung Ikon + Gmail dalam satu baris */
+.social-content-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.icons-group {
+  display: flex;
+  gap: 12px;
+}
+
+/* Style Ikon (IG & Github) */
+.social-icon {
+  width: 48px;
+  height: 48px;
+  background-color: #fff;
+  border: 2px solid #051b3d;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #051b3d;
+  font-size: 1.3rem;
+  text-decoration: none;
+  box-shadow: 4px 4px 0px #051b3d; /* Hard shadow */
+  transition: 0.2s ease;
+}
+
+.social-icon:hover {
+  background-color: #00b8ff;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 6px 6px 0px #000;
+}
+
+/* Bar Gmail (Fix Overflow & Style) */
+.email-info-strip {
+  display: flex;
+  align-items: center;
+  background-color: #051b3d; /* Background biru gelap */
+  border: 3px solid #000;
+  transform: skewX(-15deg);
+  box-shadow: 6px 6px 0px #00b8ff;
+  height: 48px; /* Samakan tinggi dengan ikon biar rapi */
+}
+
+.strip-label {
+  background-color: #fff;
+  color: #051b3d;
+  height: 100%;
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  font-weight: 900;
+  font-style: italic;
+  font-size: 0.8rem;
+  border-right: 2px solid #000;
+}
+
+.strip-value {
+  padding: 0 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transform: skewX(15deg); /* Balikin teks agar tegak */
+}
+
+.email-address {
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: 700;
+  white-space: nowrap; /* Biar email nggak turun ke bawah */
+}
+
+.copy-btn {
+  color: #00b8ff;
+  text-decoration: none;
+  font-size: 1rem;
+}
+
+/* Responsive: Di HP baru kita tumpuk */
+@media (max-width: 992px) {
+  .social-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-content-wrapper {
+    flex-direction: column;
+    width: 100%;
+  }
+  .email-info-strip {
+    transform: skewX(0);
+    width: 100%;
+    justify-content: center;
+  }
+  .strip-value,
+  .email-address {
+    transform: skewX(0);
+  }
+}
+
+.social-branding .sub-title {
+  font-family: var(--font-serif);
+  color: var(--black-soft);
+  font-size: 0.8rem;
+  letter-spacing: 2px;
+  display: block;
+  margin-bottom: 5px;
+}
+.social-branding .main-title {
+  font-family: var(--font-display);
+  text-transform: uppercase;
+  color: var(--blue-deep);
+  font-size: 2.2rem;
+  font-weight: 800;
+  font-style: italic;
+  margin: 0;
 }

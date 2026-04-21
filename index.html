@@ -29,9 +29,12 @@
       href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@700;900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
       rel="stylesheet"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css"
+    />
   </head>
   <body>
-    <!-- ===== HEADER — container di DALAM ===== -->
     <header id="main-header" class="main-header">
       <nav class="navbar" id="navbar">
         <div class="nav-kiri branding-serif">
@@ -42,7 +45,7 @@
           <li><a href="#about">About</a></li>
           <li><a href="#project">Project</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#contact">Contact Me</a></li>
+          <li><a href="#social-link">Social Link</a></li>
         </ul>
       </nav>
     </header>
@@ -114,12 +117,10 @@
       </div>
     </section>
 
-    <!-- ===== ABOUT — section full width, container di dalam ===== -->
     <section id="about" class="about">
       <!-- Container di DALAM section -->
       <div class="section-inner">
         <div class="about-grid">
-          <!-- Kolom kiri: foto -->
           <div class="about-photo-wrap">
             <div class="about-photo">
               <img src="foto.jpg" alt="Dzulfiqar Hanif" class="about-img" />
@@ -136,7 +137,6 @@
             </div>
           </div>
 
-          <!-- Kolom kanan: cerita -->
           <div class="about-story">
             <p class="section-eyebrow">Tentang Saya</p>
             <h2 class="section-title">Introduction</h2>
@@ -161,7 +161,6 @@
         </div>
       </div>
 
-      <!-- Wave SVG — full width, di LUAR container -->
       <div class="about-wave">
         <svg
           viewBox="0 0 1440 100"
@@ -176,7 +175,6 @@
         </svg>
       </div>
 
-      <!-- Hobbies — full width, di LUAR container -->
       <div class="about-hobbies">
         <div class="hobbies-inner">
           <p class="hobbies-label">Di luar coding, saya juga —</p>
@@ -212,6 +210,43 @@
                 Selalu cari hal baru — framework, tools, atau konsep desain yang
                 belum pernah dicoba.
               </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="social-link" class="social-link">
+      <div class="social-container">
+        <div class="social-branding">
+          <span class="sub-title">SOCIAL MEDIA</span>
+          <h3 class="main-title">My Social Links</h3>
+        </div>
+
+        <div class="social-content-wrapper">
+          <div class="icons-group">
+            <a
+              href="https://www.instagram.com/dzlfiq_/"
+              class="social-icon"
+              aria-label="Instagram"
+            >
+              <i class="bi bi-instagram"></i>
+            </a>
+            <a
+              href="https://github.com/Exiagetsu"
+              class="social-icon"
+              aria-label="Github"
+            >
+              <i class="bi bi-github"></i>
+            </a>
+          </div>
+
+          <div class="email-info-strip">
+            <div class="strip-label">MAIL</div>
+            <div class="strip-value">
+              <span class="email-address">dzlfiqarhanif@gmail.com</span>
+              <a href="mailto:dzlfiqarhanif@gmail.com" class="copy-btn">
+                <i class="bi bi-send-fill"></i>
+              </a>
             </div>
           </div>
         </div>
