@@ -1,3 +1,4 @@
+<!doctype html>
 <html lang="id">
   <head>
     <meta charset="UTF-8" />
@@ -6,8 +7,6 @@
       name="description"
       content="Dzulfiqar Hanif Yudiantara Putra — Website Developer spesialis UI/Web. Lihat portofolio project dan skills saya."
     />
-    <title>Dzulfiqar Portofolio</title>
-    <link rel="stylesheet" href="index-alt.css" />
     <meta
       name="keywords"
       content="front-end developer, web developer, UI developer, HTML CSS JS, portofolio"
@@ -15,48 +14,40 @@
     <meta name="author" content="Dzulfiqar Hanif Yudiantara Putra" />
     <meta name="robots" content="index, follow" />
     <meta name="theme-color" content="#0a8fd4" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,600;1,600&display=swap"
-      rel="stylesheet"
+    <meta property="og:title" content="Dzulfiqar Hanif | Website Developer" />
+    <meta
+      property="og:description"
+      content="Website Developer spesialis UI/Web."
     />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <title>Dzulfiqar Portofolio</title>
+    <link rel="stylesheet" href="index-alt.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=League+Spartan:wght@700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Courier+Prime:ital,wght@0,400;0,700;1,400;1,700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,100..900;1,100..900&family=League+Spartan:wght@700;900&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap"
       rel="stylesheet"
     />
   </head>
   <body>
+    <!-- ===== HEADER — container di DALAM ===== -->
     <header id="main-header" class="main-header">
-      <div class="container">
-        <nav class="navbar" id="navbar">
-          <div class="nav-kiri branding-serif">
-            <span class="brand-title">FRONT-END DEVELOPER</span>
-            <h2 class="brand-subtitle">
-              PORTFOLIO <br />
-              2026 EDITION
-            </h2>
-          </div>
-          <ul class="nav-kanan">
-            <li><a href="#about">About</a></li>
-            <li><a href="#project">Project</a></li>
-            <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact Me</a></li>
-          </ul>
-        </nav>
-      </div>
+      <nav class="navbar" id="navbar">
+        <div class="nav-kiri branding-serif">
+          <span class="brand-title">FRONT-END DEVELOPER</span>
+          <h2 class="brand-subtitle">PORTFOLIO<br />2026 EDITION</h2>
+        </div>
+        <ul class="nav-kanan">
+          <li><a href="#about">About</a></li>
+          <li><a href="#project">Project</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#contact">Contact Me</a></li>
+        </ul>
+      </nav>
     </header>
 
+    <!-- ===== HERO — section full width, container di dalam ===== -->
     <section id="hero" class="hero">
       <div class="hero-bg-bubbles">
         <span class="bubble"></span>
@@ -65,7 +56,6 @@
         <span class="bubble"></span>
         <span class="bubble"></span>
       </div>
-
       <div class="underwater-bubbles">
         <span class="ub"></span>
         <span class="ub"></span>
@@ -75,12 +65,14 @@
         <span class="ub"></span>
         <span class="ub"></span>
       </div>
+
+      <!-- Container di DALAM section -->
       <div class="container">
         <div class="hero-content">
           <div class="hero-left">
-            <p class="hero-eyebrow">Website developer</p>
+            <p class="hero-eyebrow">Website Developer</p>
             <h1 class="hero-name">
-              Dzulfiqar <span class="hero-name-accent"> Hanif </span>
+              Dzulfiqar <span class="hero-name-accent">Hanif</span>
             </h1>
             <p class="hero-desc">
               Membangun antarmuka digital yang hidup dan bermakna. Setiap baris
@@ -91,7 +83,6 @@
               <a href="#contact" class="btn-ghost">Contact Me</a>
             </div>
           </div>
-
           <div class="hero-right">
             <div class="persona-card">
               <div class="pc-ring pc-ring-1"></div>
@@ -116,13 +107,16 @@
           </div>
         </div>
       </div>
+
       <div class="hero-scroll">
         <span class="scroll-line"></span>
         <span class="scroll-label">SCROLL</span>
       </div>
     </section>
+
+    <!-- ===== ABOUT — section full width, container di dalam ===== -->
     <section id="about" class="about">
-      <!-- BAGIAN ATAS: foto + cerita (dibungkus .section-inner) -->
+      <!-- Container di DALAM section -->
       <div class="section-inner">
         <div class="about-grid">
           <!-- Kolom kiri: foto -->
@@ -167,44 +161,63 @@
         </div>
       </div>
 
+      <!-- Wave SVG — full width, di LUAR container -->
+      <div class="about-wave">
+        <svg
+          viewBox="0 0 1440 100"
+          xmlns="http://www.w3.org/2000/svg"
+          preserveAspectRatio="none"
+          style="background: #ffffff"
+        >
+          <path
+            d="M0,40 C200,90 400,5 600,50 C800,95 1000,10 1200,55 C1320,80 1380,35 1440,45 L1440,100 L0,100 Z"
+            fill="#38bdf8"
+          />
+        </svg>
+      </div>
+
+      <!-- Hobbies — full width, di LUAR container -->
       <div class="about-hobbies">
-        <p class="hobbies-label">Di luar coding, saya juga —</p>
-        <div class="hobbies-grid">
-          <div class="hobby-card">
-            <div class="hobby-icon">🎮</div>
-            <p class="hobby-title">Gaming</p>
-            <p class="hobby-desc">
-              Game-game Jepang seperti Resident Evil dan Persona yang menjadi
-              inspirasi saya dalam pembuatan Web ini.
-            </p>
-          </div>
-          <div class="hobby-card">
-            <div class="hobby-icon">🎵</div>
-            <p class="hobby-title">Musik</p>
-            <p class="hobby-desc">
-              Dengerin playlist anime atau soundtrack game sambil ngoding adalah
-              ritual harian.
-            </p>
-          </div>
-          <div class="hobby-card">
-            <div class="hobby-icon">🎨</div>
-            <p class="hobby-title">Visual Art</p>
-            <p class="hobby-desc">
-              Suka eksplor UI design, motion graphic, dan estetika visual dari
-              berbagai medium.
-            </p>
-          </div>
-          <div class="hobby-card">
-            <div class="hobby-icon">📚</div>
-            <p class="hobby-title">Belajar</p>
-            <p class="hobby-desc">
-              Selalu cari hal baru — framework, tools, atau konsep desain yang
-              belum pernah dicoba.
-            </p>
+        <div class="hobbies-inner">
+          <p class="hobbies-label">Di luar coding, saya juga —</p>
+          <div class="hobbies-grid">
+            <div class="hobby-card">
+              <div class="hobby-icon">🎮</div>
+              <p class="hobby-title">Gaming</p>
+              <p class="hobby-desc">
+                Game-game Jepang seperti Resident Evil dan Persona yang menjadi
+                inspirasi saya dalam pembuatan Web ini.
+              </p>
+            </div>
+            <div class="hobby-card">
+              <div class="hobby-icon">🎵</div>
+              <p class="hobby-title">Musik</p>
+              <p class="hobby-desc">
+                Dengerin playlist anime atau soundtrack game sambil ngoding
+                adalah ritual harian.
+              </p>
+            </div>
+            <div class="hobby-card">
+              <div class="hobby-icon">🎨</div>
+              <p class="hobby-title">Visual Art</p>
+              <p class="hobby-desc">
+                Suka eksplor UI design, motion graphic, dan estetika visual dari
+                berbagai medium.
+              </p>
+            </div>
+            <div class="hobby-card">
+              <div class="hobby-icon">📚</div>
+              <p class="hobby-title">Belajar</p>
+              <p class="hobby-desc">
+                Selalu cari hal baru — framework, tools, atau konsep desain yang
+                belum pernah dicoba.
+              </p>
+            </div>
           </div>
         </div>
       </div>
     </section>
+
     <script src="index.js"></script>
   </body>
 </html>

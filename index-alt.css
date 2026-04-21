@@ -24,8 +24,11 @@ html {
   box-sizing: border-box;
 }
 section {
-  background: linear-gradient(180deg, #000000 0%, #051622 100%);
   color: white;
+}
+
+.hero {
+  background: #f5faff;
 }
 body {
   overflow-x: hidden;
@@ -385,7 +388,7 @@ header {
   width: 100%;
 }
 .hero-left {
-  padding-left: 9rem;
+  padding-left: 6rem;
   padding-top: 2rem;
   align-self: flex-start;
 }
@@ -403,9 +406,8 @@ header {
   padding-left: 2rem;
 }
 .hero-name {
-  font-family: var(--font-display);
+  font-family: "montserrat", sans-serif;
   font-size: clamp(45px, 9vw, 85px);
-  letter-spacing: -2px;
   font-weight: 900;
   color: #ffffff;
   line-height: 1;
@@ -780,7 +782,21 @@ header {
   color: var(--white);
 }
 .about {
-  background: var(--blue-pale);
+  background: #ffffff;
+  overflow: hidden;
+  position: relative;
+}
+.about-wave {
+  position: relative;
+  z-index: 1;
+  margin-bottom: -4px;
+  line-height: 0;
+  background: #ffffff;
+}
+.about-wave svg {
+  display: block;
+  width: 100%;
+  height: 100px;
 }
 .about-grid {
   display: grid;
@@ -847,7 +863,6 @@ header {
   pointer-events: none;
 }
 
-/* Corner brackets */
 .photo-corner {
   position: absolute;
   width: 20px;
@@ -902,7 +917,11 @@ header {
 .about-story .section-title {
   margin-bottom: 1.8rem;
 }
-
+.about .section-inner,
+.about .about-hobbies {
+  position: relative;
+  z-index: 1;
+}
 .about-p {
   font-size: 15px;
   color: var(--text-mid);
@@ -921,22 +940,21 @@ header {
   font-style: italic;
 }
 .about-hobbies {
-  border-top: 1px solid rgba(10, 79, 212, 0.15);
-  padding: 3rem 6rem 5rem;
-  max-width: 1400px;
-  margin: 0 auto;
+  background-color: #38bdf8;
+  padding: 4rem 2rem;
+  width: 100%;
 }
 .hobbies-label {
   font-family: var(--font-serif);
   font-size: 22px;
   font-weight: 400;
   font-style: italic;
-  color: var(--text-mid);
+  color: rgba(255, 255, 255, 0.95);
   margin-bottom: 2rem;
 }
 .hobbies-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 1.5rem;
 }
 .hobby-card {
@@ -949,8 +967,8 @@ header {
   flex-direction: column;
 }
 .hobby-card:hover {
-  transform: translateY(-4px);
-  border-bottom-color: var(--blue-sky);
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
 }
 .hobby-card:nth-child(2) {
   border-bottom-color: var(--black);
