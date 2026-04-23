@@ -741,7 +741,7 @@ header {
 .section-inner {
   max-width: 1200px;
   margin: 0 auto;
-  padding: 6rem 3rem;
+  padding: 5rem 3rem 3rem;
 }
 .section-header {
   margin-bottom: 3.5rem;
@@ -782,7 +782,7 @@ header {
   color: var(--white);
 }
 .about {
-  background: #ffffff;
+  background: #f8faff;
   overflow: hidden;
   position: relative;
 }
@@ -940,88 +940,130 @@ header {
   font-style: italic;
 }
 .about-hobbies {
-  background-color: #38bdf8;
-  padding: 4rem 2rem;
+  background: #ffffff;
+  padding: 0 0 5rem;
   width: 100%;
+  /* Garis tipis biru di atas sebagai pemisah halus */
+  border-top: 1px solid rgba(10, 79, 212, 0.1);
 }
+
+.hobbies-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 4rem 3rem 0;
+}
+
+/* Label italic serif — P3R typography vibes */
 .hobbies-label {
   font-family: var(--font-serif);
-  font-size: 22px;
+  font-size: 20px;
   font-weight: 400;
   font-style: italic;
-  color: rgba(255, 255, 255, 0.95);
-  margin-bottom: 2rem;
+  color: var(--text-mid);
+  margin-bottom: 2.5rem;
+  display: flex;
+  align-items: center;
+  gap: 12px;
 }
+/* Garis dekoratif setelah label */
+.hobbies-label::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: rgba(10, 79, 212, 0.12);
+}
+
 .hobbies-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 1.5rem;
 }
+
 .hobby-card {
-  background: var(--white);
-  padding: 2.4rem 1.8rem;
-  border-bottom: 3px solid var(--blue-royal);
-  transition: var(--transition);
-  min-height: 220px;
+  background: #ffffff;
+  padding: 2rem 1.6rem;
+  /* Border kiri biru tipis — P3R accent */
+  border-left: 3px solid var(--blue-royal);
+  border-bottom: 1px solid rgba(10, 79, 212, 0.08);
+  border-right: 1px solid rgba(10, 79, 212, 0.08);
+  border-top: 1px solid rgba(10, 79, 212, 0.08);
+  transition: all 0.3s ease;
+  min-height: 200px;
   display: flex;
   flex-direction: column;
 }
 .hobby-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-4px);
+  border-left-color: var(--blue-bright);
+  box-shadow: 0 8px 24px rgba(10, 79, 212, 0.08);
+}
+
+/* Warna border kiri berbeda tiap card */
+.hobby-card:nth-child(1) {
+  border-left-color: var(--blue-royal);
 }
 .hobby-card:nth-child(2) {
-  border-bottom-color: var(--black);
-}
-.hobby-card:nth-child(2):hover {
-  border-bottom-color: var(--blue-royal);
+  border-left-color: #0a0a0a;
 }
 .hobby-card:nth-child(3) {
-  border-bottom-color: var(--blue-bright);
+  border-left-color: var(--blue-bright);
 }
 .hobby-card:nth-child(4) {
-  border-bottom-color: var(--blue-sky);
+  border-left-color: var(--blue-sky);
 }
+
+.hobby-card:nth-child(1):hover {
+  border-left-color: var(--blue-deep);
+}
+.hobby-card:nth-child(2):hover {
+  border-left-color: var(--blue-royal);
+}
+.hobby-card:nth-child(3):hover {
+  border-left-color: var(--blue-royal);
+}
+.hobby-card:nth-child(4):hover {
+  border-left-color: var(--blue-bright);
+}
+
 .hobby-icon {
-  font-size: 28px;
-  margin-bottom: 1.2rem;
+  font-size: 24px;
+  margin-bottom: 1rem;
   display: block;
+  line-height: 1;
 }
+
 .hobby-title {
   font-family: var(--font-display);
-  font-size: 12px;
+  font-size: 11px;
   font-weight: 900;
   color: var(--text-dark);
-  letter-spacing: 2px;
+  letter-spacing: 2.5px;
   text-transform: uppercase;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.7rem;
 }
+
 .hobby-desc {
   font-size: 13px;
   color: var(--text-mid);
-  line-height: 1.7;
+  line-height: 1.75;
   flex: 1;
 }
+
+/* Responsive */
 @media (max-width: 960px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 2.5rem;
-  }
-  .about-photo-wrap {
-    max-width: 320px;
-    margin: 0 auto;
-  }
   .hobbies-grid {
     grid-template-columns: repeat(2, 1fr);
   }
-  .about-hobbies {
-    padding: 2rem 1.5rem 3rem;
+  .hobbies-inner {
+    padding: 3rem 1.5rem 0;
   }
 }
-
 @media (max-width: 600px) {
   .hobbies-grid {
     grid-template-columns: 1fr;
+  }
+  .about-hobbies {
+    padding: 0 0 4rem;
   }
 }
 .social-link {
