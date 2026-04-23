@@ -1040,7 +1040,6 @@ header {
   gap: 30px;
 }
 
-/* Wrapper buat nampung Ikon + Gmail dalam satu baris */
 .social-content-wrapper {
   display: flex;
   align-items: center;
@@ -1052,7 +1051,6 @@ header {
   gap: 12px;
 }
 
-/* Style Ikon (IG & Github) */
 .social-icon {
   width: 48px;
   height: 48px;
@@ -1065,7 +1063,7 @@ header {
   color: #051b3d;
   font-size: 1.3rem;
   text-decoration: none;
-  box-shadow: 4px 4px 0px #051b3d; /* Hard shadow */
+  box-shadow: 4px 4px 0px #051b3d;
   transition: 0.2s ease;
 }
 
@@ -1076,15 +1074,14 @@ header {
   box-shadow: 6px 6px 0px #000;
 }
 
-/* Bar Gmail (Fix Overflow & Style) */
 .email-info-strip {
   display: flex;
   align-items: center;
-  background-color: #051b3d; /* Background biru gelap */
+  background-color: #051b3d;
   border: 3px solid #000;
   transform: skewX(-15deg);
   box-shadow: 6px 6px 0px #00b8ff;
-  height: 48px; /* Samakan tinggi dengan ikon biar rapi */
+  height: 48px;
 }
 
 .strip-label {
@@ -1105,14 +1102,14 @@ header {
   display: flex;
   align-items: center;
   gap: 10px;
-  transform: skewX(15deg); /* Balikin teks agar tegak */
+  transform: skewX(15deg);
 }
 
 .email-address {
   color: #fff;
   font-size: 0.9rem;
   font-weight: 700;
-  white-space: nowrap; /* Biar email nggak turun ke bawah */
+  white-space: nowrap;
 }
 
 .copy-btn {
@@ -1121,7 +1118,6 @@ header {
   font-size: 1rem;
 }
 
-/* Responsive: Di HP baru kita tumpuk */
 @media (max-width: 992px) {
   .social-container {
     flex-direction: column;
@@ -1158,4 +1154,260 @@ header {
   font-weight: 800;
   font-style: italic;
   margin: 0;
+}
+.project-section {
+  background: var(--blue-pale);
+  /* Padding atas-bawah yang lebih besar biar tidak mepet section lain */
+  padding: 8rem 0 9rem;
+  overflow: hidden;
+  /* Border atas dan bawah sebagai pemisah halus */
+  border-top: 1px solid rgba(10, 79, 212, 0.12);
+  border-bottom: 1px solid rgba(10, 79, 212, 0.12);
+}
+
+/* ---- Header ---- */
+.proj-header {
+  max-width: 1200px;
+  margin: 0 auto 6rem;
+  padding: 0 4rem;
+}
+.proj-header .section-eyebrow {
+  color: var(--blue-royal);
+}
+.proj-header .section-eyebrow::before {
+  background: var(--blue-royal);
+}
+.proj-header .section-title {
+  color: var(--text-dark);
+}
+
+/* ---- Row tiap project ---- */
+.proj-row {
+  display: flex;
+  align-items: center;
+  max-width: 1300px;
+  margin: 0 auto 8rem;
+  padding: 0 4rem;
+  gap: 0;
+}
+.proj-row:last-child {
+  margin-bottom: 0;
+}
+.proj-row-reverse {
+  flex-direction: row-reverse;
+}
+
+/* ---- Gambar ---- */
+.proj-img-side {
+  flex: 0 0 56%;
+  max-width: 56%;
+  /* Shadow halus pada gambar */
+  filter: drop-shadow(0 8px 32px rgba(10, 79, 212, 0.18));
+  transition: filter 0.4s ease;
+}
+.proj-img-side:hover {
+  filter: drop-shadow(0 12px 40px rgba(10, 79, 212, 0.28));
+}
+
+.proj-img-wrap {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+
+.proj-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.55s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+.proj-img-wrap:hover .proj-img {
+  transform: scale(1.04);
+}
+
+/* Fallback kalau gambar belum ada */
+.proj-img-fallback {
+  display: none;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  background: #bfdbfe;
+  border: 1px solid rgba(10, 79, 212, 0.15);
+}
+.proj-img-fallback svg {
+  width: 32px;
+  height: 32px;
+  stroke: #1a4fa8;
+  opacity: 0.45;
+}
+.proj-img-fallback span {
+  font-size: 10px;
+  letter-spacing: 3px;
+  color: #1a4fa8;
+  text-transform: uppercase;
+  font-weight: 700;
+  opacity: 0.55;
+}
+
+/* ---- Teks ---- */
+.proj-text-side {
+  flex: 1;
+  /* Gap lebih lega antara gambar dan teks */
+  padding: 0 4rem;
+}
+
+.proj-num {
+  font-family: var(--font-serif);
+  font-size: 72px;
+  font-weight: 600;
+  font-style: italic;
+  /* Warna sangat pudar sebagai dekorasi background */
+  color: rgba(10, 79, 212, 0.12);
+  line-height: 1;
+  margin-bottom: 0.2rem;
+  display: block;
+  /* Sedikit ke kiri dari teks judul */
+  margin-left: -4px;
+}
+
+.proj-title {
+  font-family: var(--font-serif);
+  font-size: clamp(30px, 3.5vw, 48px);
+  font-weight: 600;
+  font-style: italic;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-bottom: 1.1rem;
+}
+
+/* Garis tipis dekoratif di bawah judul */
+.proj-title::after {
+  content: "";
+  display: block;
+  width: 40px;
+  height: 2px;
+  background: var(--blue-royal);
+  margin-top: 0.8rem;
+  opacity: 0.5;
+}
+
+.proj-desc {
+  font-size: 14px;
+  color: var(--text-mid);
+  line-height: 1.9;
+  margin-bottom: 1.5rem;
+  max-width: 400px;
+}
+
+.proj-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 2rem;
+}
+
+.ptag {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 14px;
+  border: 1px solid rgba(10, 79, 212, 0.25);
+  color: var(--blue-royal);
+  border-radius: 2px;
+  background: rgba(10, 79, 212, 0.05);
+  transition: all 0.2s ease;
+}
+.ptag:hover {
+  background: rgba(10, 79, 212, 0.12);
+  border-color: rgba(10, 79, 212, 0.4);
+}
+
+/* Tombol pill biru P3R style */
+.proj-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 32px;
+  background: var(--blue-royal);
+  color: #ffffff;
+  font-family: var(--font-body);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  border: 2px solid transparent;
+}
+.proj-btn:hover {
+  background: transparent;
+  color: var(--blue-royal);
+  border-color: var(--blue-royal);
+  transform: translateY(-2px);
+  letter-spacing: 3px;
+}
+
+/* ---- Divider antar project ---- */
+.proj-row + .proj-row {
+  /* Garis tipis di atas tiap row setelah yang pertama */
+  padding-top: 8rem;
+  border-top: 1px solid rgba(10, 79, 212, 0.1);
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.proj-row:last-child {
+  padding-bottom: 0;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 960px) {
+  .project-section {
+    padding: 5rem 0 6rem;
+  }
+  .proj-row,
+  .proj-row-reverse {
+    flex-direction: column;
+    padding: 0 1.5rem;
+    gap: 2.5rem;
+    margin-bottom: 0;
+  }
+  .proj-row + .proj-row {
+    padding-top: 5rem;
+  }
+  .proj-img-side {
+    flex: none;
+    max-width: 100%;
+    width: 100%;
+    filter: none;
+  }
+  .proj-text-side {
+    padding: 0;
+  }
+  .proj-num {
+    font-size: 52px;
+  }
+  .proj-header {
+    padding: 0 1.5rem;
+    margin-bottom: 3.5rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .project-section {
+    padding: 4rem 0 5rem;
+  }
+  .proj-btn {
+    font-size: 11px;
+    padding: 12px 24px;
+  }
+  .proj-title {
+    font-size: 28px;
+  }
 }
