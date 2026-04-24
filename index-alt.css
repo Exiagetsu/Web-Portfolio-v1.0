@@ -57,21 +57,21 @@ body {
   top: 0;
   width: 100%;
   z-index: 1000;
-  background: transparent;
-  backdrop-filter: none;
-  border-bottom: none;
-  box-shadow: none;
-  transition: all 0.4s ease;
-  padding: 10px 0;
+  padding: 20px 50px;
+  background: transparent !important;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: none !important;
 }
 .main-header.header-hidden {
   transform: translateY(-100%);
 }
 .main-header.nav-scrolled {
-  background: rgba(10, 30, 80, 0.6);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 14px 0;
+  background: rgba(10, 25, 47, 0.2);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 12px 50px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
 header {
   position: fixed;
