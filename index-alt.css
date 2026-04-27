@@ -942,8 +942,6 @@ header {
 .about-hobbies {
   background: #ffffff;
   padding: 0 0 5rem;
-  width: 100%;
-  /* Garis tipis biru di atas sebagai pemisah halus */
   border-top: 1px solid rgba(10, 79, 212, 0.1);
 }
 
@@ -953,7 +951,6 @@ header {
   padding: 4rem 3rem 0;
 }
 
-/* Label italic serif — P3R typography vibes */
 .hobbies-label {
   font-family: var(--font-serif);
   font-size: 20px;
@@ -982,7 +979,6 @@ header {
 .hobby-card {
   background: #ffffff;
   padding: 2rem 1.6rem;
-  /* Border kiri biru tipis — P3R accent */
   border-left: 3px solid var(--blue-royal);
   border-bottom: 1px solid rgba(10, 79, 212, 0.08);
   border-right: 1px solid rgba(10, 79, 212, 0.08);
